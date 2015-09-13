@@ -4,11 +4,14 @@
 // Definitions by: Frank M <https://github.com/sgtfrankieboy>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-declare module gapi.client {
+declare namespace gapi.client {
     export function load(name: string, version: string, callback: () => any, root: string): void;
-    module animeInfo {
-        module get {
-            export function anime(): HttpRequest<Response<AnimeInfo>>;
+    namespace animeInfo {
+        namespace get {
+            export function anime(): HttpRequest<Response<AnimeInfo>>
+            namespace cours {
+                export function all(): HttpRequest<Response<CoursObject>>
+            }
         }
         export class Response<T> {
             items: Array<T>;
@@ -23,6 +26,11 @@ declare module gapi.client {
             sex: number;
             twitterAccount: string;
             twitterHashTag: string;
+        }
+        export class CoursObject {
+            id: number
+            year: number
+            cours: number
         }
     }
 }

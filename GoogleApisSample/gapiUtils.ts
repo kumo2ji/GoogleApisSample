@@ -3,6 +3,7 @@
 namespace gapiUtils {
     import Response = gapi.client.animeInfo.Response
     import AnimeInfo = gapi.client.animeInfo.AnimeInfo
+    import CoursObject = gapi.client.animeInfo.CoursObject
     const ROOT = 'https://animeinfoserver.appspot.com/_ah/api'
 
     export function loadGapi(callback: () => void) {
@@ -11,5 +12,9 @@ namespace gapiUtils {
 
     export function getAnime(callback: (resp: Response<AnimeInfo>) => void) {
         gapi.client.animeInfo.get.anime().execute(callback)
+    }
+
+    export function getCoursObjects(callback: (resp: Response<CoursObject>) => void) {
+        gapi.client.animeInfo.get.cours.all().execute(callback)
     }
 }
