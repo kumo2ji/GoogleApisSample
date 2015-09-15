@@ -5,32 +5,38 @@
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
 declare namespace gapi.client {
-    export function load(name: string, version: string, callback: () => any, root: string): void;
+    export function load(name: string, version: string, callback: () => any, root: string): void
     namespace animeInfo {
         namespace get {
             export function anime(): HttpRequest<Response<AnimeInfo>>
+            export function anime(request: GetAnimeInfoRequest): HttpRequest<Response<AnimeInfo>>
             namespace cours {
                 export function all(): HttpRequest<Response<CoursObject>>
             }
         }
-        export class Response<T> {
-            items: Array<T>;
-            nextPageToken: string;
+        export interface Response<T> {
+            items: Array<T>
+            nextPageToken: string
         }
-        export class AnimeInfo {
-            id: number;
-            title: string;
-            shortTitles: Array<string>;
-            publicUrl: string;
-            sequel: number;
-            sex: number;
-            twitterAccount: string;
-            twitterHashTag: string;
+        export interface AnimeInfo {
+            id?: string
+            title?: string
+            shortTitles?: Array<string>
+            publicUrl?: string
+            sequel?: string
+            sex?: string
+            twitterAccount?: string
+            twitterHashTag?: string
         }
-        export class CoursObject {
-            id: number
-            year: number
-            cours: number
+        export interface CoursObject {
+            id?: string
+            year?: string
+            cours?: string
+        }
+        export interface GetAnimeInfoRequest {
+            coursObject?: CoursObject
+            limit?: number
+            cursor?: string
         }
     }
 }

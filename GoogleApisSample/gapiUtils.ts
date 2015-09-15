@@ -10,8 +10,8 @@ namespace gapiUtils {
         gapi.client.load('animeInfo', 'v1', callback, ROOT)
     }
 
-    export function getAnime(callback: (resp: Response<AnimeInfo>) => void) {
-        gapi.client.animeInfo.get.anime().execute(callback)
+    export function getAnime(callback: (resp: Response<AnimeInfo>) => void, coursObject: CoursObject = null) {
+        gapi.client.animeInfo.get.anime({ coursObject: coursObject }).execute(callback)
     }
 
     export function getCoursObjects(callback: (resp: Response<CoursObject>) => void) {

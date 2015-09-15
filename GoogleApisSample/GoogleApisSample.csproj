@@ -43,6 +43,7 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="gapiUtils.ts" />
     <TypeScriptCompile Include="gapiUtilsSpec.ts" />
+    <TypeScriptCompile Include="NavUtils.ts" />
     <TypeScriptCompile Include="Scripts\typings\gapi\gapi.animeinfo.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\gapi\gapi.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jasmine-jquery\jasmine-jquery.d.ts" />
